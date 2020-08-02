@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.stage.Stage?>
+
+<Stage resizable="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.orzhov.Controladores.CRUDController">
+    <scene>
+        <Scene>
+            <AnchorPane prefHeight="427.0" prefWidth="713.0">
+            <children>
+               <Pane fx:id="menu" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" visible="false">
+                  <children>
+                     <ImageView fitHeight="449.0" fitWidth="718.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@adminrecur.jpg" />
+                        </image>
+                     </ImageView>
+                     <Label fx:id="txtGestor" layoutX="212.0" layoutY="71.0" prefHeight="16.0" prefWidth="361.0" />
+                     <Button id="salir" layoutX="237.0" layoutY="386.0" mnemonicParsing="false" onAction="#salir" prefHeight="35.0" prefWidth="100.0" stylesheets="@../../style/stylesheet.css" text="Salir" />
+                     <Label fx:id="alerta" layoutX="228.0" layoutY="148.0" prefHeight="95.0" prefWidth="330.0">
+                        <font>
+                           <Font size="19.0" />
+                        </font>
+                     </Label>
+                     <Button layoutX="101.0" layoutY="201.0" mnemonicParsing="false" onAction="#aulas" text="Aulas" />
+                     <Button layoutX="401.0" layoutY="352.0" mnemonicParsing="false" onAction="#materias" text="Materias" />
+                     <Button layoutX="375.0" layoutY="201.0" mnemonicParsing="false" onAction="#planEstudio" text="Plan de estudios" />
+                     <Button layoutX="244.0" layoutY="201.0" mnemonicParsing="false" onAction="#usuarios" text="Profesores" />
+                     <Button layoutX="94.0" layoutY="352.0" mnemonicParsing="false" onAction="#carreras" text="Carrera" />
+                     <Button layoutX="243.0" layoutY="352.0" mnemonicParsing="false" onAction="#categorias" text="Categorias" />
+                     <Button layoutX="551.0" layoutY="201.0" mnemonicParsing="false" onAction="#equipos" text="Equipos" />
+                     <Button layoutX="557.0" layoutY="352.0" mnemonicParsing="false" onAction="#gruposs" text="Grupo" />
+                     <Button id="salir" layoutX="337.0" layoutY="386.0" mnemonicParsing="false" onAction="#cerrarSecion" prefHeight="35.0" prefWidth="128.0" stylesheets="@../../style/stylesheet.css" text="Cerrar Sesion" />
+                  </children>
+               </Pane>
+               <Pane fx:id="aulas" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="429.0" fitWidth="715.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva8.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="611.0" layoutY="69.0" mnemonicParsing="false" onAction="#salirAulas" text="Regresar" />
+                     <Button layoutX="33.0" layoutY="69.0" mnemonicParsing="false" onAction="#agregarA" text="Agregar" />
+                     <Button layoutX="123.0" layoutY="69.0" mnemonicParsing="false" onAction="#modificarA" text="Modificar" />
+                     <Button layoutX="229.0" layoutY="69.0" mnemonicParsing="false" onAction="#eliminarA" text="Eliminar" />
+                     <TableView fx:id="tVA1" layoutX="312.0" layoutY="100.0" prefHeight="297.0" prefWidth="376.0">
+                       <columns>
+                         <TableColumn fx:id="tCC1" text="ID" />
+                         <TableColumn fx:id="tCE1" prefWidth="295.0" text="Nombre" />
+                       </columns>
+                     </TableView>
+                     <Pane fx:id="agregarA" layoutX="29.0" layoutY="100.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <TextField fx:id="claveA" layoutX="86.0" layoutY="14.0" promptText="Clave" />
+                           <TextField fx:id="nombreA" layoutX="86.0" layoutY="49.0" promptText="Nombre" />
+                           <TextField fx:id="tipoA" layoutX="86.0" layoutY="83.0" promptText="Tipo" />
+                           <TextField fx:id="capacidadA" layoutX="86.0" layoutY="117.0" promptText="Capacidad" />
+                           <TextField fx:id="descripcionA" layoutX="86.0" layoutY="152.0" promptText="Descripcion" />
+                           <TextField fx:id="ubicacionA" layoutX="86.0" layoutY="187.0" promptText="Ubicacion" />
+                           <Button layoutX="86.0" layoutY="240.0" mnemonicParsing="false" onAction="#agregarAula" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="18.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="191.0" text="Ubicacion:" />
+                           <Label layoutX="14.0" layoutY="156.0" text="Descripcion: ">
+                              <font>
+                                 <Font size="10.0" />
+                              </font></Label>
+                           <Label layoutX="14.0" layoutY="121.0" text="Capacidad:">
+                              <font>
+                                 <Font size="12.0" />
+                              </font></Label>
+                           <Label layoutX="14.0" layoutY="87.0" text="Tipo:" />
+                           <Label layoutX="14.0" layoutY="53.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarA" layoutX="29.0" layoutY="93.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idAulasModificar" layoutX="7.0" layoutY="14.0" prefWidth="150.0" promptText="Id de aulas" />
+                           <TextField fx:id="claveAA" layoutX="86.0" layoutY="57.0" promptText="Clave" />
+                           <TextField fx:id="nombreAA" layoutX="86.0" layoutY="92.0" promptText="Nombre" />
+                           <TextField fx:id="tipoAA" layoutX="86.0" layoutY="126.0" promptText="Tipo" />
+                           <TextField fx:id="capacidadAA" layoutX="86.0" layoutY="160.0" promptText="Capacidad" />
+                           <TextField fx:id="descripcionAA" layoutX="86.0" layoutY="195.0" promptText="Descripcion" />
+                           <TextField fx:id="ubicacionAA" layoutX="86.0" layoutY="230.0" promptText="Ubicacion" />
+                           <Button layoutX="86.0" layoutY="273.0" mnemonicParsing="false" onAction="#actualizarAula" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="61.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="234.0" text="Ubicacion:" />
+                           <Label layoutX="14.0" layoutY="199.0" text="Descripcion: " />
+                           <Label layoutX="14.0" layoutY="164.0" text="Capacidad:" />
+                           <Label layoutX="14.0" layoutY="130.0" text="Tipo:" />
+                           <Label layoutX="14.0" layoutY="96.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarA" layoutX="33.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idAulas" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="Id de aulas" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarAula" text="Confirmar" />
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane fx:id="materias" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="429.0" fitWidth="712.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva7.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="615.0" layoutY="56.0" mnemonicParsing="false" onAction="#salirMaterias" text="Regresar" />
+                     <Button layoutX="14.0" layoutY="56.0" mnemonicParsing="false" onAction="#agregarM" text="Agregar" />
+                     <Button layoutX="101.0" layoutY="56.0" mnemonicParsing="false" onAction="#modificarM" text="Modificar" />
+                     <Button layoutX="197.0" layoutY="56.0" mnemonicParsing="false" onAction="#eliminarM" text="Eliminar" />
+                     <TableView fx:id="tVM1" layoutX="292.0" layoutY="95.0" prefHeight="303.0" prefWidth="400.0">
+                        <columns>
+                           <TableColumn fx:id="tCIDM" prefWidth="70.0" text="ID" />
+                           <TableColumn fx:id="tCNM" prefWidth="188.0" text="Nombre" />
+                           <TableColumn fx:id="tCPM" prefWidth="141.0" text="Plan de estudios" />
+                        </columns>
+                     </TableView>
+                     <Pane fx:id="agregarM" layoutY="95.0" prefHeight="319.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <TextField fx:id="claveM" layoutX="118.0" layoutY="14.0" promptText="Clave" />
+                           <TextField fx:id="nombreM" layoutX="118.0" layoutY="49.0" promptText="Nombre" />
+                           <TextField fx:id="creditosM" layoutX="118.0" layoutY="83.0" promptText="Creditos" />
+                           <TextField fx:id="cuatrimestreM" layoutX="118.0" layoutY="117.0" promptText="Cuatrimestre" />
+                           <TextField fx:id="posicionM" layoutX="118.0" layoutY="152.0" promptText="Posicion" />
+                           <TextField fx:id="clavePlanM" layoutX="118.0" layoutY="187.0" promptText="Clave del plan" />
+                           <Button layoutX="90.0" layoutY="289.0" mnemonicParsing="false" onAction="#agregarMaterias" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="18.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="191.0" text="Clave del plan:" />
+                           <Label layoutX="14.0" layoutY="156.0" text="Posicion: " />
+                           <Label layoutX="14.0" layoutY="121.0" text="Cuatrimestre:" />
+                           <Label layoutX="14.0" layoutY="87.0" text="Creditos:" />
+                           <Label layoutX="14.0" layoutY="53.0" text="Nombre:" />
+                           <Label layoutX="14.0" layoutY="225.0" text="Horas a la semana:">
+                              <font>
+                                 <Font size="10.0" />
+                              </font></Label>
+                           <Label layoutX="14.0" layoutY="259.0" text="Tipo de materia:">
+                              <font>
+                                 <Font size="12.0" />
+                              </font></Label>
+                           <TextField fx:id="horasSemanaM" layoutX="118.0" layoutY="221.0" promptText="Horas a la semana" />
+                           <TextField fx:id="tipoMateria" layoutX="118.0" layoutY="255.0" promptText="Tipo de materia" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarM" layoutY="91.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idModificarMaterias" layoutX="14.0" layoutY="2.0" prefWidth="150.0" promptText="Id de materias" />
+                           <TextField fx:id="claveMM" layoutX="115.0" layoutY="40.0" promptText="Clave" />
+                           <TextField fx:id="nombreMM" layoutX="115.0" layoutY="75.0" promptText="Nombre" />
+                           <TextField fx:id="creditosMM" layoutX="115.0" layoutY="109.0" promptText="Creditos" />
+                           <TextField fx:id="cuatrimestreMM" layoutX="115.0" layoutY="143.0" promptText="Cuatrimestre" />
+                           <TextField fx:id="posicionMM" layoutX="115.0" layoutY="178.0" promptText="Posicion" />
+                           <TextField fx:id="clavePlanMM" layoutX="115.0" layoutY="213.0" promptText="Clave del plan" />
+                           <Button layoutX="196.0" layoutY="2.0" mnemonicParsing="false" onAction="#actualizarMaterias" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="44.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="217.0" text="Clave del plan:" />
+                           <Label layoutX="14.0" layoutY="182.0" text="Posicion: " />
+                           <Label layoutX="14.0" layoutY="147.0" text="Cuatrimestre:" />
+                           <Label layoutX="14.0" layoutY="113.0" text="Creditos:" />
+                           <Label layoutX="14.0" layoutY="79.0" text="Nombre:" />
+                           <TextField fx:id="horasSemanaMM" layoutX="115.0" layoutY="246.0" promptText="Horas a la semana" />
+                           <TextField fx:id="tipoMateriaM" layoutX="115.0" layoutY="280.0" promptText="Tipo de materia" />
+                           <Label layoutX="14.0" layoutY="250.0" text="Horas a la semana:">
+                              <font>
+                                 <Font size="10.0" />
+                              </font></Label>
+                           <Label layoutX="14.0" layoutY="284.0" text="Tipo de materia:">
+                              <font>
+                                 <Font size="12.0" />
+                              </font></Label>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarM" layoutX="33.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idEliminarMaterias" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="Id de materias" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarMaterias" text="Confirmar" />
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane fx:id="planEstudio" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="429.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva6.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="600.0" layoutY="69.0" mnemonicParsing="false" onAction="#salirPlan" text="Regresar" />
+                     <Button layoutX="53.0" layoutY="69.0" mnemonicParsing="false" onAction="#agregarP" text="Agregar" />
+                     <Button layoutX="133.0" layoutY="69.0" mnemonicParsing="false" onAction="#modificarP" text="Modificar" />
+                     <Button layoutX="222.0" layoutY="69.0" mnemonicParsing="false" onAction="#eliminarP" text="Eliminar" />
+                     <TableView fx:id="tVP" layoutX="312.0" layoutY="100.0" prefHeight="262.0" prefWidth="367.0">
+                        <columns>
+                           <TableColumn fx:id="tCIDP" prefWidth="81.0" text="ID" />
+                           <TableColumn fx:id="tCCP" prefWidth="285.0" text="Nombre" />
+                        </columns>
+                     </TableView>
+                     <Pane fx:id="agregarP" layoutY="82.0" prefHeight="312.0" prefWidth="265.0">
+                        <children>
+                           <TextField fx:id="claveP" layoutX="86.0" layoutY="52.0" promptText="Clave" />
+                           <TextField fx:id="nombreP" layoutX="86.0" layoutY="87.0" promptText="Nombre" />
+                           <TextField fx:id="nivelP" layoutX="86.0" layoutY="121.0" promptText="Nivel" />
+                           <TextField fx:id="IDP" layoutX="86.0" layoutY="155.0" promptText="ID" />
+                           <Button layoutX="86.0" layoutY="206.0" mnemonicParsing="false" onAction="#agregarPlan" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="56.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="159.0" text="ID:" />
+                           <Label layoutX="14.0" layoutY="125.0" text="Nivel:" />
+                           <Label layoutX="14.0" layoutY="91.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarP" layoutX="39.0" layoutY="117.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idModificarPlan" layoutX="27.0" layoutY="14.0" prefWidth="150.0" promptText="Id plan de estudios" />
+                           <TextField fx:id="clavePP" layoutX="86.0" layoutY="57.0" promptText="Clave" />
+                           <TextField fx:id="nombrePP" layoutX="86.0" layoutY="92.0" promptText="Nombre" />
+                           <TextField fx:id="nivelPP" layoutX="86.0" layoutY="126.0" promptText="Nivel" />
+                           <TextField fx:id="IDPP" layoutX="86.0" layoutY="160.0" promptText="ID" />
+                           <Button layoutX="80.0" layoutY="218.0" mnemonicParsing="false" onAction="#actualizarPlan" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="61.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="164.0" text="ID:" />
+                           <Label layoutX="14.0" layoutY="130.0" text="Nivel:" />
+                           <Label layoutX="14.0" layoutY="96.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarP" layoutX="33.0" layoutY="131.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idEliminarPlan" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="ID plan de estudios" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarPlan" text="Confirmar" />
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane fx:id="usuarios" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="431.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva5.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="51.0" layoutY="69.0" mnemonicParsing="false" onAction="#agregarU" text="Agregar" />
+                     <Button layoutX="155.0" layoutY="69.0" mnemonicParsing="false" onAction="#modificarU" text="Modificar" />
+                     <Button layoutX="264.0" layoutY="69.0" mnemonicParsing="false" onAction="#eliminarU" text="Eliminar" />
+                     <TableView fx:id="tVU" layoutX="318.0" layoutY="107.0" prefHeight="287.0" prefWidth="373.0">
+                        <columns>
+                           <TableColumn fx:id="tCIDU" prefWidth="61.0" text="ID" />
+                           <TableColumn fx:id="tCNU" prefWidth="166.0" text="Nombre" />
+                           <TableColumn fx:id="tCCU" prefWidth="145.0" text="Carrera" />
+                        </columns>
+                     </TableView>
+                     <Pane fx:id="agregarU" layoutX="15.0" layoutY="118.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <TextField fx:id="claveU" layoutX="100.0" layoutY="14.0" promptText="Clave" />
+                           <TextField fx:id="nombreU" layoutX="100.0" layoutY="49.0" promptText="Nombre" />
+                           <TextField fx:id="IDCarreraU" layoutX="100.0" layoutY="83.0" promptText="ID Carrera" />
+                           <TextField fx:id="nivelU" layoutX="100.0" layoutY="117.0" promptText="Nivel" />
+                           <TextField fx:id="contratoU" layoutX="100.0" layoutY="152.0" promptText="Contrato" />
+                           <Button layoutX="86.0" layoutY="211.0" mnemonicParsing="false" onAction="#agregarUsuarios" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="18.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="156.0" text="Contrato: " />
+                           <Label layoutX="14.0" layoutY="121.0" text="Nivel:" />
+                           <Label layoutX="14.0" layoutY="87.0" text="Id de la Carrera:">
+                              <font>
+                                 <Font size="10.0" />
+                              </font></Label>
+                           <Label layoutX="14.0" layoutY="53.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarU" layoutX="35.0" layoutY="118.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idModificarUsuarios" layoutX="27.0" layoutY="14.0" prefWidth="150.0" promptText="Id de usuarios" />
+                           <TextField fx:id="claveUU" layoutX="101.0" layoutY="57.0" promptText="Clave" />
+                           <TextField fx:id="nombreUU" layoutX="101.0" layoutY="92.0" promptText="Nombre" />
+                           <TextField fx:id="IDCarreraUU" layoutX="101.0" layoutY="126.0" promptText="ID Carrera" />
+                           <TextField fx:id="nivelUU" layoutX="101.0" layoutY="160.0" promptText="Nivel" />
+                           <TextField fx:id="contratoUU" layoutX="101.0" layoutY="195.0" promptText="Contrato" />
+                           <Button layoutX="78.0" layoutY="246.0" mnemonicParsing="false" onAction="#actualizarUsuarios" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="61.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="199.0" text="Contrato " />
+                           <Label layoutX="14.0" layoutY="164.0" text="Nivel:" />
+                           <Label layoutX="14.0" layoutY="132.0" text="ID de la carrera:">
+                              <font>
+                                 <Font size="10.0" />
+                              </font></Label>
+                           <Label layoutX="14.0" layoutY="96.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarU" layoutX="47.0" layoutY="139.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idEliminarUsuarios" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="Id usuarios" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarUsuarios" text="Confirmar" />
+                        </children>
+                     </Pane>
+                     <Button layoutX="614.0" layoutY="69.0" mnemonicParsing="false" onAction="#salirUsuarios" text="Regresar" />
+                  </children>
+               </Pane>
+               <Pane fx:id="carrera" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="430.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva4.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="600.0" layoutY="69.0" mnemonicParsing="false" onAction="#salirCarrera" text="Regresar" />
+                     <Button layoutX="41.0" layoutY="69.0" mnemonicParsing="false" onAction="#agregarC" text="Agregar" />
+                     <Button layoutX="133.0" layoutY="69.0" mnemonicParsing="false" onAction="#modificarC" text="Modificar" />
+                     <Button layoutX="229.0" layoutY="69.0" mnemonicParsing="false" onAction="#eliminarC" text="Eliminar" />
+                     <TableView fx:id="tVC" layoutX="312.0" layoutY="100.0" prefHeight="281.0" prefWidth="367.0">
+                        <columns>
+                           <TableColumn fx:id="tCCC" prefWidth="100.0" text="ID" />
+                           <TableColumn fx:id="tCNC" prefWidth="266.0" text="Nombre" />
+                        </columns>
+                     </TableView>
+                     <Pane fx:id="agregarC" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <TextField fx:id="claveC" layoutX="86.0" layoutY="76.0" promptText="Clave" />
+                           <TextField fx:id="nombreC" layoutX="86.0" layoutY="111.0" promptText="Nombre" />
+                           <Button layoutX="72.0" layoutY="170.0" mnemonicParsing="false" onAction="#agregarCarrera" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="80.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="115.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarC" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idModificarCarrera" layoutX="27.0" layoutY="64.0" prefWidth="150.0" promptText="ID carreras" />
+                           <TextField fx:id="claveCC" layoutX="86.0" layoutY="107.0" promptText="Clave" />
+                           <TextField fx:id="nombreCC" layoutX="86.0" layoutY="142.0" promptText="Nombre" />
+                           <Button layoutX="68.0" layoutY="200.0" mnemonicParsing="false" onAction="#actualizarCarrera" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="111.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="146.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarC" layoutX="33.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idEliminarCarrera" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="ID carrera" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarCarrera" text="Confirmar" />
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane fx:id="categorias" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="430.0" fitWidth="712.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva3.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="227.0" layoutY="69.0" mnemonicParsing="false" onAction="#salirCategorias" text="Regresar" />
+                     <Button layoutX="45.0" layoutY="69.0" mnemonicParsing="false" onAction="#agregarCAA" text="Agregar" />
+                     <Button layoutX="133.0" layoutY="69.0" mnemonicParsing="false" onAction="#modificarCAA" text="Modificar" />
+                     <Button layoutX="612.0" layoutY="69.0" mnemonicParsing="false" onAction="#eliminarCAA" text="Eliminar" />
+                     <TableView fx:id="tVCA" layoutX="312.0" layoutY="100.0" prefHeight="296.0" prefWidth="340.0">
+                        <columns>
+                           <TableColumn fx:id="tCCCA" prefWidth="67.0" text="ID" />
+                           <TableColumn fx:id="tCNCA" prefWidth="272.0" text="Nombre" />
+                        </columns>
+                     </TableView>
+                     <Pane fx:id="agregarCA" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <TextField fx:id="claveCA" layoutX="86.0" layoutY="47.0" promptText="Clave" />
+                           <TextField fx:id="nombreCA" layoutX="86.0" layoutY="82.0" promptText="Nombre" />
+                           <TextField fx:id="descripcionCA" layoutX="86.0" layoutY="116.0" promptText="Descripcion" />
+                           <Button layoutX="52.0" layoutY="163.0" mnemonicParsing="false" onAction="#agregarCategoria" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="51.0" text="Clave:" />
+                           <Label layoutX="14.0" layoutY="120.0" text="Descripcion:" />
+                           <Label layoutX="14.0" layoutY="86.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarCA" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idModificarCategoria" layoutX="27.0" layoutY="42.0" prefWidth="150.0" promptText="ID categorias" />
+                           <TextField fx:id="claveCAA" layoutX="86.0" layoutY="85.0" promptText="Clave" />
+                           <TextField fx:id="nombreCAA" layoutX="86.0" layoutY="120.0" promptText="Nombre" />
+                           <TextField fx:id="descripcionCAA" layoutX="86.0" layoutY="154.0" promptText="Descripcion" />
+                           <Button layoutX="68.0" layoutY="203.0" mnemonicParsing="false" onAction="#actualizarCategoria" text="Confirmar" />
+                           <Label layoutX="7.0" layoutY="90.0" text="Clave:" />
+                           <Label layoutX="5.0" layoutY="160.0" text="Descripcion:">
+                              <font>
+                                 <Font size="12.0" />
+                              </font></Label>
+                           <Label layoutX="4.0" layoutY="125.0" text="Nombre:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarCA" layoutX="33.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idEliminarCategoria" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="ID categorias" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarCategoria" text="Confirmar" />
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane fx:id="equipos" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="425.0" fitWidth="712.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva2.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="586.0" layoutY="69.0" mnemonicParsing="false" onAction="#salirEquipos" text="Regresar" />
+                     <Button layoutX="44.0" layoutY="69.0" mnemonicParsing="false" onAction="#agregarE" text="Agregar" />
+                     <Button layoutX="133.0" layoutY="69.0" mnemonicParsing="false" onAction="#modificarE" text="Modificar" />
+                     <Button layoutX="229.0" layoutY="69.0" mnemonicParsing="false" onAction="#eliminarE" text="Eliminar" />
+                     <TableView fx:id="tVE" layoutX="313.0" layoutY="113.0" prefHeight="264.0" prefWidth="340.0">
+                        <columns>
+                           <TableColumn fx:id="tCNE" prefWidth="252.0" text="Nombre" />
+                           <TableColumn fx:id="tCIDE" prefWidth="87.0" text="ID" />
+                        </columns>
+                     </TableView>
+                     <Pane fx:id="agregarE" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <TextField fx:id="IDE" layoutX="86.0" layoutY="54.0" promptText="ID Equipo" />
+                           <TextField fx:id="IDCE" layoutX="86.0" layoutY="89.0" promptText="ID Categoria" />
+                           <TextField fx:id="nombreE" layoutX="86.0" layoutY="123.0" promptText="Nombre" />
+                           <TextField fx:id="descripcionE" layoutX="86.0" layoutY="157.0" promptText="Descripcion" />
+                           <Button layoutX="66.0" layoutY="199.0" mnemonicParsing="false" onAction="#agregarEquipo" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="58.0" text="ID Equipo:" />
+                           <Label layoutX="14.0" layoutY="161.0" text="Descripcion:" />
+                           <Label layoutX="14.0" layoutY="127.0" text="Nombre:" />
+                           <Label layoutX="14.0" layoutY="93.0" text="ID Categoria:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarE" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idModificarEquipo" layoutX="27.0" layoutY="39.0" prefWidth="150.0" promptText="ID equipos" />
+                           <TextField fx:id="IDEE" layoutX="86.0" layoutY="82.0" promptText="ID Equipo" />
+                           <TextField fx:id="IDCEE" layoutX="86.0" layoutY="117.0" promptText="ID Categoria" />
+                           <TextField fx:id="nombreEE" layoutX="86.0" layoutY="151.0" promptText="Nombre" />
+                           <TextField fx:id="descripcionEE" layoutX="86.0" layoutY="185.0" promptText="Descripcion" />
+                           <Button layoutX="68.0" layoutY="222.0" mnemonicParsing="false" onAction="#actualizarEquipo" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="86.0" text="ID Equipo:" />
+                           <Label layoutX="14.0" layoutY="189.0" text="Descripcion:" />
+                           <Label layoutX="14.0" layoutY="155.0" text="Nombre:" />
+                           <Label layoutX="14.0" layoutY="121.0" text="ID Categoria:" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarE" layoutX="33.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idEliminarEquipo" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="ID equipos" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarEquipo" text="Confirmar" />
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane fx:id="grupos" prefHeight="400.0" prefWidth="600.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="427.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Diapositiva1.jpg" />
+                        </image>
+                     </ImageView>
+                     <Button layoutX="25.0" layoutY="55.0" mnemonicParsing="false" onAction="#agregarG" text="Agregar" />
+                     <Button layoutX="112.0" layoutY="56.0" mnemonicParsing="false" onAction="#modificarG" text="Modificar" />
+                     <Button layoutX="208.0" layoutY="56.0" mnemonicParsing="false" onAction="#eliminarG" text="Eliminar" />
+                     <TableView fx:id="tVG" layoutX="300.0" layoutY="100.0" prefHeight="276.0" prefWidth="288.0">
+                        <columns>
+                           <TableColumn fx:id="tCIDG" prefWidth="287.0" text="ID" />
+                        </columns>
+                     </TableView>
+                     <Pane fx:id="agregarG" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <TextField fx:id="claveG" layoutX="86.0" layoutY="70.0" promptText="Clave" />
+                           <Button layoutX="52.0" layoutY="163.0" mnemonicParsing="false" onAction="#agregarGrupo" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="74.0" text="Clave:" />
+                           <ComboBox fx:id="turno" layoutX="14.0" layoutY="22.0" prefWidth="150.0" promptText="Turno" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="modificarG" layoutY="82.0" prefHeight="312.0" prefWidth="265.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idModificarGrupos" layoutX="27.0" layoutY="42.0" prefWidth="150.0" promptText="ID Grupos" />
+                           <TextField fx:id="claveGG" layoutX="86.0" layoutY="136.0" promptText="Clave" />
+                           <Button layoutX="52.0" layoutY="197.0" mnemonicParsing="false" onAction="#actualizarGrupo" text="Confirmar" />
+                           <Label layoutX="12.0" layoutY="140.0" text="Clave:" />
+                           <ComboBox fx:id="turnoss" layoutX="27.0" layoutY="85.0" prefWidth="150.0" promptText="Turno" />
+                        </children>
+                     </Pane>
+                     <Pane fx:id="eliminarG" layoutX="33.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <children>
+                           <ComboBox fx:id="idEliminarGrupos" layoutX="25.0" layoutY="14.0" prefWidth="150.0" promptText="ID Grupos" />
+                           <Button layoutX="66.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarGrupo" text="Confirmar" />
+                        </children>
+                     </Pane>
+                     <Button layoutX="585.0" layoutY="55.0" mnemonicParsing="false" onAction="#salirGrupos" text="Regresar" />
+                  </children>
+               </Pane>
+               <Pane fx:id="login" layoutX="200.0" layoutY="100.0" prefHeight="363.0" prefWidth="600.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <ImageView fitHeight="435.0" fitWidth="729.0" layoutX="-2.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@LOGGG.jpg" />
+                        </image>
+                     </ImageView>
+                     <Label layoutX="336.0" layoutY="145.0" text="Clave:" />
+                     <TextField fx:id="nombreUsuario" layoutX="270.0" layoutY="169.0" promptText="Clave" />
+                     <TextField fx:id="password" layoutX="270.0" layoutY="253.0" promptText="Nombre" />
+                     <Label layoutX="327.0" layoutY="225.0" text="Nombre:" />
+                     <Button layoutX="231.0" layoutY="373.0" mnemonicParsing="false" onAction="#login" prefHeight="41.0" prefWidth="251.0" text="INGRESAR" textAlignment="CENTER" />
+                     <Label fx:id="mensajeError" layoutX="149.0" layoutY="225.0" text="Los datos ingresados son incorrectos favor de corregirlos" textFill="RED" visible="false" />
+                  </children>
+               </Pane>
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>

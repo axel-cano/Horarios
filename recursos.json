@@ -1,0 +1,11 @@
+{"recurso":  "carrera", "clave": "50", "nombre":  "iti 2020"}
+{"recurso": "aulas", "clave":  "304", "nombre":  "aula", "tipo":  "clase", "capacidad":  40, "descripcion": "pues bonita", "ubicacion":  "a"}
+{"recurso":  "categorias_equipo", "clave":  3, "nombre":  "computo", "descripcion":  ":("}
+{"recurso":  "equipo", "idEquipo":  4, "idCategoria":  3, "nombre":  "computadora", "descripcion": "bonito"}
+{"recurso":  "grupos", "clave":  "218", "turno": "false"}
+{"recurso":  "grupos", "clave":  "318", "turno": "false"}
+{"recurso":  "grupos", "clave":  "217", "turno": "true"}
+{"recurso":  "plan_estudios", "clave": "iti2018", "nombre":  "iti", "nivel": 8, "id": 30}
+{"recurso": "usuarios", "clave": "2405", "idCarrera":  20, "nombre": "saidtest", "nivel": "ptc", "contrato": "ptc"}
+{"recurso": "usuarios", "clave": "2404", "idCarrera":  20, "nombre": "saidtest2", "nivel": "ptc", "contrato": "ptc"}
+{"recurso": "materia", "clave":  "797", "nombre":  "POO", "creditos":  10, "cuatrimestre":  6, "posicion": 8,"clavePlan":  "ITI-2020","horasSemana":  6, "tipoMateria":  "Practica"}
